@@ -1,7 +1,13 @@
 from flask import Flask, render_template
+from flask_wtf import FlaskForm
+from wtforms import StringField, SubmitField
+from wtforms import DataRequired
 
 
 app = Flask(__name__)
+
+# Create a Form Class
+
 
 @app.route('/')
 
@@ -25,3 +31,4 @@ def page_not_found(e):
 @app.errorhandler(500)
 def page_not_found(e):
     return render_template ("500.html"), 500
+
